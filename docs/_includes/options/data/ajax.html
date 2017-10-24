@@ -19,7 +19,45 @@
     What should the results returned to Select2 look like?
   </h3>
 
-  {% include options/not-written.html %}
+  If you are not using nesting your results should look like
+  {% highlight json linenos %}
+  {
+    "results":
+      {
+        "id": "id-of-item-1",
+        "text": "First item here"
+      },
+    //Rest of content here
+  }
+  {% endhighlight %}
+
+  If you are using nested results, is should look like this
+  {% highlight json linenos %}
+  {
+    "results": [
+      {
+        "text": "Cities",
+        "children": [
+          {
+            "id": "Aracaju - SE",
+            "text": "Aracaju - SE"
+          },
+          // More itens here.
+        ]
+      },
+      {
+        "text": "Bairros",
+        "children": [
+          {
+            "id": "Jardim S\u00e3o Judas Tadeu - Guarulhos - SP",
+            "text": "Jardim S\u00e3o Judas Tadeu - Guarulhos - SP"
+          },
+          // More itens here.
+        ]
+      }
+    ]
+  }
+  {% endhighlight %}
 
   <h3>
     Is there a way to modify the response before passing it back to Select2?
